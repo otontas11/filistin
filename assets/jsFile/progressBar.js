@@ -15,6 +15,7 @@
         var CID = grecaptcha.getResponse();
 
         if (form.checkValidity() && CID.length !== 0) {
+
           progressAnimation(34);
 
           localStorage.setItem(
@@ -35,6 +36,8 @@
             document.getElementById("ulkeform").value = "";
             document.getElementById("sehirform").value = "";
             document.getElementById("invalidResult").classList.add("d-none");
+            document.getElementById("kvkkCheck").checked = false;
+            document.getElementById("personalCheck").checked = false;
             form.classList.remove("was-validated");
 
             //   window.open(url, "_blank");
@@ -49,58 +52,36 @@
   });
 })();
 
-
 /////////////// PROGRESS BAR ////////////////////////////////////
 
-const progressLengthDefault = window
-  .getComputedStyle(document.getElementById("progress"))
-  .width.split("px")[0]; // parseFloat
-
 const totalSign = 20;
+
 let kudusMapNumber=1;
-
-const stepDistance = progressLengthDefault / totalSign;
-
-let signCount = 0,
-  x = signCount;
-
-let skillbarPerson = document.getElementById("skillbarPerson");
-
-let skillbarPercent = document.getElementById("skillbarPercent");
+ 
+let signCount = 0; 
 
 kalanImza(signCount);
 kudusMap(kudusMapNumber);
-export function progressAnimation(timeStamp) {
-  kalanImza(signCount);
 
+document.querySelector("#secondAreaCarpet").style.width=(100-((signCount * 100) / totalSign).toFixed(2))+'%'
+document.querySelector("#skillbarPerson").style.width=(((signCount * 100) / totalSign).toFixed(2))+'%'
+document.querySelector("#skillbarPercent").style.width=(((signCount * 100) / totalSign).toFixed(2))+'%'
+document.getElementById("skillbarPercentDegree").innerHTML =parseFloat((signCount * 100) / totalSign).toFixed(2) + "%";
+
+function progressAnimation() {
+ 
   if (signCount <= totalSign) {
-    console.log("signCount", signCount, totalSign);
-    // Update progress bar
+    console.log("signCount", signCount, totalSign); 
 
-    x += stepDistance;
-    document.querySelector("#progress_bar").style.width = x + "px";
-
-    // Update numeric value
     ++signCount;
+  
+    kudusMapNumber = Math.ceil((signCount * 100) / totalSign / 5);
 
-    skillbarPerson.setAttribute(
-      "data-percent",
-      parseFloat((signCount * 100) / totalSign).toFixed(2) + "%"
-    );
-
-    skillbarPercent.setAttribute(
-      "data-percent",
-      parseFloat((signCount * 100) / totalSign).toFixed(2) + "%"
-    );
-
-    document.getElementById("skillbarPercentDegree").innerHTML =
-      parseFloat((signCount * 100) / totalSign).toFixed(2) + "%";
-
-    kudusMapNumber = Math.round((signCount * 100) / totalSign / 5);
+    document.querySelector("#secondAreaCarpet").style.width=(100-((signCount * 100) / totalSign).toFixed(2))+'%'
 
     kudusMap(kudusMapNumber);
-
-    console.log("kudusMapNumber", kudusMapNumber);
+    kalanImza(signCount);
+ 
   }
 }
 

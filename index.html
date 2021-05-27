@@ -38,7 +38,48 @@
     <link rel="stylesheet" href="./assets/css/home-main.css">
     <link rel="stylesheet" href="./assets/dist/css/lightbox.min.css">
     <link href="./assets/css/progressBar.css" rel="stylesheet">
-    <link href="/assets/css/socialMedia.css"  rel="stylesheet">
+    <link href="/assets/css/socialMedia.css" rel="stylesheet">
+
+    <style>
+        .App-deneme {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            background-color: burlywood;
+            border-radius: 8px;
+
+        }
+
+        .firstArea {
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            grid-column: 1/1;
+            grid-row: 1/1;
+            z-index: 1;
+            background-image: url("../images/kudus.jpg");
+            opacity: .8;
+            border-radius: 8px;
+        }
+
+        .secondArea {
+            width: 90%;
+            height: 100%;
+            border: 1px solid white;
+            grid-column: 1/1;
+            grid-row: 1/1;
+            color: white;
+            background-color: #089201;
+            z-index: 2;
+            border-radius: 8px;
+            margin-left: auto;
+        }
+
+        .progressDegree {
+            height: 24px;
+            border-radius: 10px;
+        }
+    </style>
 
 </head>
 
@@ -116,10 +157,10 @@
 
     <!-- Main Body Content Start -->
     <main id="body-content">
+        
         <div class="mainWrapper">
 
             <!-- ad-soyad form alanı  -->
-
             <section class="wide-tb-30 bg-white featured-heart-icon-hidden">
                 <div class="container">
                     <div class="row align-items-center">
@@ -149,6 +190,30 @@
                                         <input type="text" class="form-control form-light" autocomplete="off"
                                             id="sehirform">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="sehirform"><strong>İl</strong></label>
+                                        <input type="text" class="form-control form-light" autocomplete="off"
+                                            id="sehirform">
+                                    </div>
+
+                                    <div class="form-check form-group checkbox-lg">
+                                        <input class="form-check-input" type="checkbox" value="" id="kvkkCheck" required>
+                                        <label class="form-check-label" for="kvkkCheck">
+                                          KVKK okudum ve <span id="kvkkModal" data-toggle="modal" data-target="#exampleModalLong" style="color:#ff4949;cursor: pointer;font-size: 1rem">kabul ediyorum.</span>
+                                       
+                                        
+                                        </label> 
+                                      </div>
+
+                                      <div class="form-check form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="personalCheck" required>
+                                        <label class="form-check-label" for="personalCheck">
+                                          Kişisel verilerin işlenmesini okudum ve <span id="personalModal" data-toggle="modal" data-target="#exampleModalLong" style="color:#ff4949;cursor: pointer;font-size: 1rem">kabul ediyorum.</span>
+                                        </label> 
+                                      </div>
+
+
                                     <div class="form-group ">
                                         <label for="sehirform"><strong></strong></label>
                                         <div class="g-recaptcha" id="captcha" name="captcha"
@@ -163,27 +228,7 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- <div class="col-lg-4 col-md-12">
-                        <div class="featured-content">
-
-                            <h1 class="heading-main">
-
-                                Kvkk Metni
-                            </h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s</p>
-                            <div class="d-flex align-items-center justify-content-between mt-4">
-
-                                <div class="share-on-text">
-                                    <strong>Paylaş</strong> <a href="#"><img src="assets/images/facebook.svg"
-                                            alt=""></a> <a href="#"><img src="assets/images/instagram.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-
-                        </div>
-                    </div> -->
+                       
                     </div>
 
                 </div>
@@ -203,7 +248,7 @@
 
                     </div>
                     <div class="kudusMap mb-3" id="kudusMap20">
-                        
+
                     </div>
 
 
@@ -215,47 +260,47 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-
                             <h3>ADIM ADIM KUDÜS - HEDEF SAYIMIZ</h3>
-
                             <!-- Animated Skillbars Start -->
                             <div class="skillbar-wrap">
-                                <div class="clearfix">
+
+                                <div class="d-flex justify-content-between mb-2">
                                     <b>
                                         Hedeflenen İmza Sayısı <span id="kalanImza"></span>
                                     </b>
 
+                                    <div style="color:#D59B2D"><b>19,400,000</b></div>
                                 </div>
-                                <div class="skillbar" id="skillbarPerson" data-percent="0%">
-                                    <div class="skillbar-percent">19,400,000</div>
-                                    <div class="skillbar-bar"></div>
+
+                                <div class="progress progressDegree" style="position: relative">
+                                    <div class="bar" id="skillbarPerson" style="background:green">
+                                    </div>
                                 </div>
                             </div>
                             <!-- Animated Skillbars Start -->
-
                             <!-- Animated Skillbars Start -->
                             <div class="skillbar-wrap">
-                                <div class="clearfix">
+                                <div class="d-flex justify-content-between mb-2">
                                     <b>
                                         Tamamlanma Yüzdesi
                                     </b>
+                                    <b>
+                                           <div style="color:#D59B2D" id="skillbarPercentDegree">0%</div>
+                                    </b>
+                                 
+                                </div>
 
+                                <div class="progress progressDegree" style="position: relative">
+                                    <div class="bar" id="skillbarPercent" style="background:green">
+                                    </div>
                                 </div>
-                                <div class="skillbar" id="skillbarPercent" data-percent="0%">
-                                    <div class="skillbar-percent" id="skillbarPercentDegree">0%</div>
-                                    <div class="skillbar-bar"></div>
-                                </div>
+
                             </div>
-                            <!-- Animated Skillbars Start -->
                         </div>
-
-
-
-                        <div class="col-lg-7 col-md-12">
-
-
-                        </div>
+                        <!-- Animated Skillbars Start -->
                     </div>
+
+
 
                     <div class="row justify-content-between align-items-end">
                         <div class="col-lg-4 col-md-6">
@@ -267,22 +312,21 @@
 
                         </div>
                     </div>
-                    <!-- Açılır harita -->
-                    <div class="kudusMap">
-                        <div id="wrap" class="card progressBar">
-                            <div class="wrap_sub">
-                                <div id="progress">
-                                    <div id="progress_bar"></div>
-                                </div>
-                            </div>
+
+                    <div class="App-deneme card">
+
+                        <div class="firstArea" id="firstAreaCarpet">
+                            <img src="assets/images/kudus.jpg" alt="" style="border-radius: 8px;">
                         </div>
+                        <div class="secondArea" id="secondAreaCarpet"></div>
+
                     </div>
-                    <!-- 
-                <img src="assets/images/kudus.jpg" alt="" /> -->
+
 
                 </div>
             </section>
             <!-- Team Member Style End -->
+
             <!-- Our Partners Start -->
             <section class="wide-tb-100 pt-5">
                 <div class="container">
@@ -358,6 +402,28 @@
                         <span class="fa fa-whatsapp"></span>
                     </div>
                 </div>
+            </section>
+
+            <!-- modal-kvkk-kullanıcı veri işleem ve silme -->
+            <section >
+                <div class="modal fade " id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog  modal-lg" role="document">
+                      <div class="modal-content">
+                        <div style="padding:1rem">
+                          <h5 class="modal-title" id="modalTitle" style="color: black;font-size:larger"></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body" id="modalBody">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Kabul Ediyorum</button> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </section>
 
         </div>
@@ -437,8 +503,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Column Third -->
-
 
             </div>
         </div>
@@ -501,6 +565,7 @@
 
     <script src="assets/jsFile/progressBar.js" type="module"></script>
     <script src="./assets/jsFile/socialMedia.js"></script>
+    <script src="./assets/jsFile/modals.js"></script>
 </body>
 
 </html>
