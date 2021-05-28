@@ -8,8 +8,6 @@ convertImageUrlToBase64();
 function convertImageUrlToBase64() {
   //url 64 bit resmin kodunu tutar
 
-  let nameDetail = null,name=null,surname=null,prefix='BEN';
-
   let isim = localStorage.getItem("name")
   let sehir = localStorage.getItem("city")
   isim =  turkishToUpper(isim);
@@ -27,6 +25,8 @@ function convertImageUrlToBase64() {
   //   }
   // }
 
+  const ben = document.createElement("b");
+  ben.innerHTML = "Ben";
 
 
   //////////
@@ -39,6 +39,7 @@ function convertImageUrlToBase64() {
     canvas.height = pageImage.naturalHeight;
 
     const ctx = canvas.getContext("2d");
+    console.log("ctx",ctx)
     ctx.imageSmoothingEnabled = false;
     ctx.drawImage(pageImage, 0, 0);
     // ctx.shadowBlur = 5;
@@ -46,18 +47,22 @@ function convertImageUrlToBase64() {
     ctx.fillStyle = "black";
     ctx.shadowColor = "black";
 
-    ctx.font = "700 42px Arial";
+    ctx.font = "bold 48px  sans-serif";
 
-    ctx.textAlign = "center"; 
-    ctx.fillText(` Ben ${isim}` , canvas.width / 5, 250); 
+    ctx.textAlign = "left"; 
+    ctx.fillText(`Ben` , 200, 350); 
 
-    ctx.fillText(sehir, canvas.width / 5, 980);
+    ctx.font = " normal 48px  sans-serif";
+    ctx.fillText(`${isim}` , 310, 350);  
+    ctx.font = " normal 36px  sans-serif";
+    ctx.fillText(sehir,460, 1310);
+
     console.log("canvas", canvas);
     saveScreenshot(canvas);
   };
 
   function saveScreenshot(canvas) {
-    let fileName = "image";
+    let fileName = "filistin";
     const link = document.createElement("a");
     link.download = fileName + ".png";
 
@@ -76,7 +81,7 @@ resize();
 
 function resize() {
   var canvas = document.querySelector("canvas");
-  var canvasRatio = 4800 / 3490;
+  var canvasRatio = 2000 / 2000;
   var windowRatio = window.innerHeight / window.innerWidth;
   var width;
   var height;

@@ -40,7 +40,7 @@
             document.getElementById("personalCheck").checked = false;
             form.classList.remove("was-validated");
 
-            //   window.open(url, "_blank");
+            window.open(url, "_blank");
           }, 100);
         } else {
           document.getElementById("invalidResult").classList.remove("d-none");
@@ -54,11 +54,11 @@
 
 /////////////// PROGRESS BAR ////////////////////////////////////
 
-const totalSign = 20;
+const totalSign = 20;//19.400.000 olacak
 
-let kudusMapNumber=1;
+let kudusMapNumber=1;//yuzdelik kısma göre filistin işgal haritası değişecek. her %5 lik kısım için bir harita eklenecek
  
-let signCount = 0; 
+let signCount = 0; //toplma atılan imza sayısını temsil eder
 
 kalanImza(signCount);
 kudusMap(kudusMapNumber);

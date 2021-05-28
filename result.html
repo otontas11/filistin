@@ -37,6 +37,16 @@
     <link rel="stylesheet" href="./assets/dist/css/lightbox.min.css">
 
     <style>
+        @font-face {
+ 
+                font-family: 'gilroy';
+                src: url('./assets/css/fonts/Gilroy-Bold.otf')  format('opentype');
+                font-weight: bold;
+                }
+
+    </style>
+
+    <style>
         html,
         body {
             width: 100%;
@@ -80,15 +90,15 @@
     </div>
     <!-- Page loader End -->
 
-    <!-- Header Start -->
-    <header class="  wow fadeInDown header-fullpage">
+      <!-- Header Start -->
+      <header class="fixed-top wow fadeInDown header-fullpage">
 
         <!-- Main Navigation Start -->
         <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container text-nowrap">
                 <div class="d-flex align-items-center w-100 col p-0 logo-brand">
                     <a class="navbar-brand rounded-bottom light-bg" href="index.html">
-                        <img src="assets/images/logo_dark.svg" alt="">
+                        <img src="assets/images/logo_dark.svg" width="150" height="50" alt="">
                     </a>
                 </div>
                 <!-- Topbar Buttons Start -->
@@ -96,7 +106,6 @@
 
                     <a class="nav-link btn btn-default ml-3 donate-btn" href="donation-page.html">TR</a><br>
                     <a class="nav-link btn btn-default ml-3 donate-btn" href="donation-page.html">ENG</a>
-                    <a class="nav-link btn btn-default ml-3 donate-btn" href="donation-page.html">ARB</a>
 
                     <!-- Toggle Button Start -->
                     <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse"
@@ -118,15 +127,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">Bildiri</a>
+                            <a class="nav-link" href="bildiriler.html">Bildiri</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.html">Şehitlerimiz</a>
+                            <a class="nav-link" href="sehitlerimiz.html">Şehitlerimiz</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.html">Gazze'den Fotoğraflar</a>
+                            <a class="nav-link" href="gazzedenfotolar.html">Gazze'den Fotoğraflar</a>
                         </li>
 
                     </ul>
@@ -136,12 +145,13 @@
         </nav>
         <!-- Main Navigation End -->
     </header>
+    <!-- Header Start -->
 
 
     <!-- Main Body Content Start -->
     <main id="body-content">
 
-        <canvas id="myCanvas" width="500" height="500">
+        <canvas id="myCanvas" width="1000" height="1000">
             Your browser does not support the HTML5 canvas tag.
         </canvas>
 
